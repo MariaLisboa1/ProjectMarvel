@@ -1,0 +1,67 @@
+<!-- INÍCIO DO CONTEÚDO -->
+<section class="content-header">
+</section>
+
+<section class="content">
+
+  <div class="jumbotron welcome-jumbotron">
+    <h1>Bem vindo a MarvelQua!</h1>
+    <p>
+      O local onde voce encontra varios quadrinhos.
+    </p>
+  </div>
+  <div>
+    <div class="row heroes">
+      <div class="col-12 col-md-12 col-xl d-flex" *ngFor="let hero of comics">
+        <div class="card flex-fill">
+          <div class="card-body py-2">
+            <img class="img-fluid" src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}">
+            <div class="row">
+              <div class="col-12 col-md-12 align-self-center text-center text-md-left">
+                <p class="mb-0 text-center text-primary" (click)="getDescription(hero.id)">{{hero.name}}</p>
+              </div>
+              <div class="col-6 col-md-6 align-self-center text-center text-md-right">
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+
+      <div class="col">
+
+        <h1 class="text-danger text-center">Raros</h1>
+
+
+        <div class="card" *ngFor="let hero of heroes">
+          <div class="card-body mx-auto">
+            <h5 class="card-title">{{hero.title}}</h5>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col">
+        <h1 class="text-danger text-center">Criadores</h1>
+        <div class="card" *ngFor="let creat of criators">
+          <div class="card-body mx-auto">
+            <h5 class="card-title">{{creat.firstName}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--
+  <div *ngFor="let hero of heroes">
+      <img src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}">
+  <h2>{{hero.name}}</h2>
+  </div>-->
+
+</section>
+<!-- FIM DO CONTEÚDO -->
